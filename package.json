@@ -5,6 +5,7 @@
   "author": "Minimize Team <hello@minimize.se>",
   "dependencies": {
     "gatsby": "^2.0.19",
+    "gatsby-cli": "^2.4.4",
     "gatsby-image": "^2.0.15",
     "gatsby-plugin-glamor": "^2.0.6",
     "gatsby-plugin-manifest": "^2.0.5",
