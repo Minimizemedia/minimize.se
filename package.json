@@ -4,21 +4,20 @@
   "version": "0.0.1",
   "author": "Minimize Team <hello@minimize.se>",
   "dependencies": {
-    "gatsby": "^2.0.19",
-    "gatsby-cli": "^2.4.4",
-    "gatsby-image": "^2.0.15",
+    "gatsby": "^2.0.38",
+    "gatsby-image": "^2.0.19",
     "gatsby-plugin-glamor": "^2.0.6",
-    "gatsby-plugin-manifest": "^2.0.5",
-    "gatsby-plugin-offline": "^2.0.5",
-    "gatsby-plugin-react-helmet": "^3.0.0",
+    "gatsby-plugin-manifest": "^2.0.7",
+    "gatsby-plugin-offline": "^2.0.11",
+    "gatsby-plugin-react-helmet": "^3.0.1",
     "gatsby-plugin-sharp": "^2.0.11",
     "gatsby-plugin-typography": "^2.2.1",
-    "gatsby-source-filesystem": "^2.0.4",
-    "gatsby-transformer-sharp": "^2.1.4",
+    "gatsby-source-filesystem": "^2.0.7",
+    "gatsby-transformer-sharp": "^2.1.7",
     "glamor": "^2.20.40",
     "prop-types": "^15.6.2",
-    "react": "^16.5.1",
-    "react-dom": "^16.5.1",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
     "react-helmet": "^5.2.0",
     "react-typography": "^0.16.13",
     "typography": "^0.16.17"
@@ -36,6 +35,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "gatsby-cli": "^2.4.4",
     "prettier": "^1.14.2"
   },
   "repository": {
