@@ -7,7 +7,7 @@ const IndexPage = () => (
   <Layout>
     <h1>Index page</h1>
     <p>Image:</p>
-    <div css={{ maxWidth: '300px', marginBottom: '1.45rem' }}>
+    <div style={{ maxWidth: '300px', marginBottom: '1.45rem' }}>
       <Image />
     </div>
   </Layout>
