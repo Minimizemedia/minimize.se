@@ -16,14 +16,14 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'mini_',
+        name: 'mini_mize',
         short_name: 'm_',
         start_url: '/',
         background_color: '#fff',
         theme_color: '#fff',
         display: 'minimal-ui',
         // TODO: Change next line to match icon
-        icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
+        icon: 'src/images/mini_favicon.png', // This path is relative to the root of the site.
       },
     },
     {
