@@ -3,7 +3,7 @@
   "public": true,
   "name": "minimize.se",
   "regions": ["bru"],
-  "alias": ["new.minimize.se"],
+  "alias": ["minimize.se", "www.minimize.se"],
   "builds": [
     { "src": "package.json", "use": "@now/static-build" }
   ]
