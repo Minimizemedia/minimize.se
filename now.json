@@ -2,9 +2,15 @@
   "version": 2,
   "public": true,
   "name": "minimize.se",
-  "regions": ["bru"],
   "alias": ["minimize.se", "www.minimize.se"],
   "builds": [
     { "src": "package.json", "use": "@now/static-build" }
+  ],
+  "routes": [
+    {
+      "src": "/**",
+      "dest": "/404",
+      "status": 404
+    }
   ]
 }
