@@ -5,6 +5,6 @@
   "regions": ["bru"],
   "alias": ["minimize.se", "www.minimize.se"],
   "builds": [
-    { "src": "package.json", "use": "@now/static-build" }
+    { "src": "package.json", "use": "@now/static-build", "config": { "distDir": "public" }}
   ]
 }
