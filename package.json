@@ -10,12 +10,19 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "",
-    "dev": "",
-    "start": ""
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "next": "^8.0.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-plugin-react": "^7.12.4"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/minimizelab/minimize.se"
