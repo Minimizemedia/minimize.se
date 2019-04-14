@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from '@emotion/styled';
 
 const NavDiv = styled.div`
-  width: 5vw;
+  width: ${props => props.hover ? '4.5vw': '4vw'};
+  transition: width 0.1s ease;
   position: fixed;
   top: 0;
   z-index: 100;
@@ -26,10 +27,32 @@ const NavTitle = styled.h1`
   text-orientation: mixed;
 `;
 
-const SideNav = props => (
-  <NavDiv bgcolor={props.bgcolor} position={props.position}>
-    <NavTitle titleColor={props.titleColor} position={props.position}>{props.title}</NavTitle>
-  </NavDiv>
-);
+class SideNav extends Component {
+  state = {
+    hover: false,
+  };
+  handleMouseEnter = () => {
+    this.setState({ hover: true });
+  };
+  handleMouseLeave = () => {
+    this.setState({
+      hover: false,
+    });
+  };
+  render() {
+    return (
+      <NavDiv
+        onMouseEnter={this.handleMouseEnter}
+        onMouseLeave={this.handleMouseLeave}
+        hover={this.state.hover}
+        bgcolor={this.props.bgcolor}
+        position={this.props.position}>
+        <NavTitle titleColor={this.props.titleColor} position={this.props.position}>
+          {this.props.title}
+        </NavTitle>
+      </NavDiv>
+    );
+  }
+}
 
 export default SideNav;

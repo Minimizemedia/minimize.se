@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import SideNav from '../components/SideNav'
+import SideNav from '../components/SideNav';
 
 const IndexWrapper = styled.div`
   background-color: #eddfc6;
@@ -21,10 +21,9 @@ const IndexTitle = styled.h1`
 const IndexPage = () => (
   <IndexWrapper>
     <IndexTitle>we are mini_mize</IndexTitle>
-    <SideNav bgcolor={'terracotta'} titleColor={'miniBlue'} position={'left'} title={'about'}></SideNav>
-    <SideNav bgcolor={'navy'} titleColor={'miniBlue'} position={'right'} title={'work'}></SideNav>
+    <SideNav bgcolor={'terracotta'} titleColor={'miniBlue'} position={'left'} title={'about'} />
+    <SideNav bgcolor={'navy'} titleColor={'miniBlue'} position={'right'} title={'work'} />
   </IndexWrapper>
 );
-
 
 export default IndexPage;
