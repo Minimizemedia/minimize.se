@@ -11,7 +11,7 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <style>{`body { margin: 0; font-family: IBM Plex Sans, sans-serif; }`}</style>
-          <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet"/>
+          <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet" />
         </Head>
         <body className="custom_class">
           <Main />
