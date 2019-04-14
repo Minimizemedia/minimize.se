@@ -21,8 +21,8 @@ const IndexTitle = styled.h1`
 const IndexPage = () => (
   <IndexWrapper>
     <IndexTitle>we are mini_mize</IndexTitle>
-    <SideNav bgcolor={'terracotta'} titleColor={'miniBlue'} position={'left'} title={'about'} />
-    <SideNav bgcolor={'navy'} titleColor={'miniBlue'} position={'right'} title={'work'} />
+    <SideNav bgColor={'terracotta'} titleColor={'miniBlue'} position={'left'} title={'about'} />
+    <SideNav bgColor={'navy'} titleColor={'miniBlue'} position={'right'} title={'work'} />
   </IndexWrapper>
 );
 
