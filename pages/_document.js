@@ -10,6 +10,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <style>{`body { margin: 0; font-family: IBM Plex Sans, sans-serif; }`}</style>
           <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet" />
         </Head>
