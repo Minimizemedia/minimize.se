@@ -14,7 +14,7 @@ const IndexWrapper = styled.div`
 `;
 
 const IndexTitle = styled.h1`
-  color: #00398d;
+  color: #1c6ed2;
   font-size: 5em;
 `;
 
