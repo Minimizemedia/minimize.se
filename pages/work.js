@@ -2,8 +2,8 @@ import React from 'react';
 import SideNav from '../components/SideNav';
 import styled from '@emotion/styled';
 
-const AboutWrapper = styled.div`
-  background-color: ${props => props.theme.colors['terra']};
+const WorkWrapper = styled.div`
+  background-color: ${props => props.theme.colors['navy']};
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -13,17 +13,17 @@ const AboutWrapper = styled.div`
   flex-direction: column;
 `;
 
-const About = () => (
-  <AboutWrapper>
-    <div>about</div>
+const Work = () => (
+  <WorkWrapper>
+    <div>Work</div>
     <SideNav
       title={'start'}
-      position={'right'}
+      position={'left'}
       nextPage={'/index'}
       bgColor={'pale'}
-      titleColor={'navy'}
+      titleColor={'sage'}
     />
-  </AboutWrapper>
+  </WorkWrapper>
 );
 
-export default About;
+export default Work;
