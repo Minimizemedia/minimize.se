@@ -8,8 +8,8 @@ const Work = () => (
       title={'start'}
       position={'left'}
       nextPage={'/index'}
-      bgColor={'terracotta'}
-      titleColor={'miniBlue'}
+      bgColor={'pale'}
+      titleColor={'sage'}
     />
   </>
 );

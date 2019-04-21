@@ -8,8 +8,8 @@ const About = () => (
       title={'start'}
       position={'right'}
       nextPage={'/index'}
-      bgColor={'terracotta'}
-      titleColor={'miniBlue'}
+      bgColor={'pale'}
+      titleColor={'navy'}
     />
   </>
 );

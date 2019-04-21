@@ -15,7 +15,7 @@ const spanStyle = props =>
     : undefined;
 
 const IndexWrapper = styled.div`
-  background-color: #eddfc6;
+  background-color: ${props => props.theme.colors['pale']};
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -26,7 +26,7 @@ const IndexWrapper = styled.div`
 `;
 
 const IndexTitle = styled.h1`
-  color: #1c6ed2;
+  color: ${props => props.theme.colors['blue']};
   font-size: 5em;
   span {
     ${spanStyle}
@@ -60,15 +60,15 @@ class IndexPage extends Component {
           title={'about'}
           position={'left'}
           nextPage={'/about'}
-          bgColor={'terracotta'}
-          titleColor={'miniBlue'}
+          bgColor={'terra'}
+          titleColor={'blue'}
         />
         <SideNav
           title={'work'}
           position={'right'}
           nextPage={'/work'}
           bgColor={'navy'}
-          titleColor={'miniBlue'}
+          titleColor={'blue'}
         />
       </IndexWrapper>
     );

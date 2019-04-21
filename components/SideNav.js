@@ -31,7 +31,7 @@ const NavTitle = styled.h1`
 class SideNav extends Component {
   componentDidMount() {
     const { router } = this.props;
-    router.prefetch('/dynamic');
+    router.prefetch(this.props.nextPage);
   }
   state = {
     hover: false,
