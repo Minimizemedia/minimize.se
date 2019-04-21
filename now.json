@@ -1,10 +1,9 @@
 {
   "version": 2,
   "public": true,
+  "scope": "mini_dev",
   "name": "minimize.se",
   "regions": ["bru"],
   "alias": ["minimize.se", "www.minimize.se"],
-  "builds": [
-    { "src": "package.json", "use": "@now/static-build", "config": { "distDir": "public" }}
-  ]
+  "builds": [{ "src": "next.config.js", "use": "@now/next" }]
 }
