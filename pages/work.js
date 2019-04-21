@@ -1,12 +1,12 @@
 import React from 'react';
 import SideNav from '../components/SideNav';
 
-const About = () => (
+const Work = () => (
   <>
-    <div>about</div>
+    <div>Work</div>
     <SideNav
       title={'start'}
-      position={'right'}
+      position={'left'}
       nextPage={'/index'}
       bgColor={'terracotta'}
       titleColor={'miniBlue'}
@@ -14,4 +14,4 @@ const About = () => (
   </>
 );
 
-export default About;
+export default Work;

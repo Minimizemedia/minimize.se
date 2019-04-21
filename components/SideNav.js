@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'next/router';
 import styled from '@emotion/styled';
 
 const NavDiv = styled.div`
@@ -28,6 +29,10 @@ const NavTitle = styled.h1`
 `;
 
 class SideNav extends Component {
+  componentDidMount() {
+    const { router } = this.props;
+    router.prefetch('/dynamic');
+  }
   state = {
     hover: false,
   };
@@ -40,8 +45,10 @@ class SideNav extends Component {
     });
   };
   render() {
+    const { router } = this.props;
     return (
       <NavDiv
+        onClick={() => setTimeout(() => router.push(this.props.nextPage), 100)}
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
         hover={this.state.hover}
@@ -59,4 +66,4 @@ class SideNav extends Component {
   }
 }
 
-export default SideNav;
+export default withRouter(SideNav);
