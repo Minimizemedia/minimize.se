@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SideNav from '../components/SideNav';
 import styled from '@emotion/styled';
+import PageWrapper from '../components/PageWrapper';
 import { css } from '@emotion/core';
 
 const spanStyle = props =>
@@ -13,17 +14,6 @@ const spanStyle = props =>
           rgb(28, 110, 210) 0.283662px -0.958924px 0px, rgb(28, 110, 210) 0.96017px -0.279415px 0px;
       `
     : undefined;
-
-const IndexWrapper = styled.div`
-  background-color: ${props => props.theme.colors['pale']};
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  flex-direction: column;
-`;
 
 const IndexTitle = styled.h1`
   color: ${props => props.theme.colors['blue']};
@@ -49,7 +39,7 @@ class IndexPage extends Component {
   };
   render() {
     return (
-      <IndexWrapper>
+      <PageWrapper bgColor="pale">
         <IndexTitle hover={this.state.hover}>
           we are{' '}
           <span onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
@@ -70,7 +60,7 @@ class IndexPage extends Component {
           bgColor={'navy'}
           titleColor={'blue'}
         />
-      </IndexWrapper>
+      </PageWrapper>
     );
   }
 }

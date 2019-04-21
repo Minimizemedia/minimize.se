@@ -1,29 +1,18 @@
 import React from 'react';
 import SideNav from '../components/SideNav';
-import styled from '@emotion/styled';
-
-const AboutWrapper = styled.div`
-  background-color: ${props => props.theme.colors['terra']};
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  flex-direction: column;
-`;
+import PageWrapper from '../components/PageWrapper';
 
 const About = () => (
-  <AboutWrapper>
+  <PageWrapper bgColor="terra">
     <div>about</div>
     <SideNav
       title={'start'}
       position={'right'}
-      nextPage={'/index'}
+      nextPage={'/'}
       bgColor={'pale'}
       titleColor={'navy'}
     />
-  </AboutWrapper>
+  </PageWrapper>
 );
 
 export default About;
