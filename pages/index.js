@@ -3,6 +3,7 @@ import SideNav from '../components/SideNav';
 import styled from '@emotion/styled';
 import PageWrapper from '../components/PageWrapper';
 import { css } from '@emotion/core';
+import { PageTransition } from '../utils/pageTransition';
 
 const spanStyle = props =>
   props.hover
@@ -23,6 +24,12 @@ const IndexTitle = styled.h1`
   }
 `;
 
+const transition = {
+  from: { opacity: 0 },
+  enter: { opacity: 1 },
+  leave: { opacity: 0 },
+};
+
 class IndexPage extends Component {
   state = {
     hover: false,
@@ -39,28 +46,30 @@ class IndexPage extends Component {
   };
   render() {
     return (
-      <PageWrapper bgColor="pale">
-        <IndexTitle hover={this.state.hover}>
-          we are{' '}
-          <span onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
-            mini_mize
-          </span>
-        </IndexTitle>
-        <SideNav
-          title={'about'}
-          position={'left'}
-          nextPage={'/about'}
-          bgColor={'terra'}
-          titleColor={'blue'}
-        />
-        <SideNav
-          title={'work'}
-          position={'right'}
-          nextPage={'/work'}
-          bgColor={'navy'}
-          titleColor={'blue'}
-        />
-      </PageWrapper>
+      <PageTransition transition={transition}>
+        <PageWrapper bgColor="pale">
+          <IndexTitle hover={this.state.hover}>
+            we are{' '}
+            <span onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
+              mini_mize
+            </span>
+          </IndexTitle>
+          <SideNav
+            title={'about'}
+            position={'left'}
+            nextPage={'/about'}
+            bgColor={'terra'}
+            titleColor={'blue'}
+          />
+          <SideNav
+            title={'work'}
+            position={'right'}
+            nextPage={'/work'}
+            bgColor={'navy'}
+            titleColor={'blue'}
+          />
+        </PageWrapper>
+      </PageTransition>
     );
   }
 }
