@@ -8,7 +8,7 @@ import { PageTransition } from '../utils/pageTransition';
 const spanStyle = props =>
   props.hover
     ? css`
-        color: #eddfc6;
+        color: #F0E9DC;
         text-shadow: rgb(28, 110, 210) 1px 0px 0px, rgb(28, 110, 210) 0.540302px 0.841471px 0px,
           rgb(28, 110, 210) -0.416147px 0.909297px 0px, rgb(28, 110, 210) -0.989992px 0.14112px 0px,
           rgb(28, 110, 210) -0.653644px -0.756802px 0px,
@@ -18,8 +18,11 @@ const spanStyle = props =>
 
 const IndexTitle = styled.h1`
   color: ${props => props.theme.colors['blue']};
-  font-size: 5em;
+  font-size: 10vw;
+  margin-left: 14%;
+  margin-top: 6%;
   span {
+    display: block;
     ${spanStyle}
   }
 `;
