@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import SideNav from '../components/SideNav';
 import styled from '@emotion/styled';
+import PageWrapper from '../components/PageWrapper';
 import { css } from '@emotion/core';
+import { PageTransition } from '../utils/pageTransition';
 
 const spanStyle = props =>
   props.hover
     ? css`
-        color: #eddfc6;
+        color: #F0E9DC;
         text-shadow: rgb(28, 110, 210) 1px 0px 0px, rgb(28, 110, 210) 0.540302px 0.841471px 0px,
           rgb(28, 110, 210) -0.416147px 0.909297px 0px, rgb(28, 110, 210) -0.989992px 0.14112px 0px,
           rgb(28, 110, 210) -0.653644px -0.756802px 0px,
@@ -14,24 +16,22 @@ const spanStyle = props =>
       `
     : undefined;
 
-const IndexWrapper = styled.div`
-  background-color: ${props => props.theme.colors['pale']};
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  flex-direction: column;
-`;
-
 const IndexTitle = styled.h1`
   color: ${props => props.theme.colors['blue']};
-  font-size: 5em;
+  font-size: 10vw;
+  margin-left: 14%;
+  margin-top: 6%;
   span {
+    display: block;
     ${spanStyle}
   }
 `;
+
+const transition = {
+  from: { opacity: 0 },
+  enter: { opacity: 1 },
+  leave: { opacity: 0 },
+};
 
 class IndexPage extends Component {
   state = {
@@ -49,28 +49,30 @@ class IndexPage extends Component {
   };
   render() {
     return (
-      <IndexWrapper>
-        <IndexTitle hover={this.state.hover}>
-          we are{' '}
-          <span onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
-            mini_mize
-          </span>
-        </IndexTitle>
-        <SideNav
-          title={'about'}
-          position={'left'}
-          nextPage={'/about'}
-          bgColor={'terra'}
-          titleColor={'blue'}
-        />
-        <SideNav
-          title={'work'}
-          position={'right'}
-          nextPage={'/work'}
-          bgColor={'navy'}
-          titleColor={'blue'}
-        />
-      </IndexWrapper>
+      <PageTransition transition={transition}>
+        <PageWrapper bgColor="pale">
+          <IndexTitle hover={this.state.hover}>
+            we are{' '}
+            <span onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
+              mini_mize
+            </span>
+          </IndexTitle>
+          <SideNav
+            title={'about'}
+            position={'left'}
+            nextPage={'/about'}
+            bgColor={'terra'}
+            titleColor={'blue'}
+          />
+          <SideNav
+            title={'work'}
+            position={'right'}
+            nextPage={'/work'}
+            bgColor={'navy'}
+            titleColor={'blue'}
+          />
+        </PageWrapper>
+      </PageTransition>
     );
   }
 }

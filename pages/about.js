@@ -1,29 +1,27 @@
 import React from 'react';
 import SideNav from '../components/SideNav';
-import styled from '@emotion/styled';
+import PageWrapper from '../components/PageWrapper';
+import { PageTransition } from '../utils/pageTransition';
 
-const AboutWrapper = styled.div`
-  background-color: ${props => props.theme.colors['terra']};
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  flex-direction: column;
-`;
+const transition = {
+  from: { transform: 'translateX(-100%)' },
+  enter: { transform: 'translateX(0)', opacity: 1 },
+  leave: { opacity: 0 },
+};
 
 const About = () => (
-  <AboutWrapper>
-    <div>about</div>
-    <SideNav
-      title={'start'}
-      position={'right'}
-      nextPage={'/index'}
-      bgColor={'pale'}
-      titleColor={'navy'}
-    />
-  </AboutWrapper>
+  <PageTransition transition={transition}>
+    <PageWrapper bgColor="terra">
+      <div>about</div>
+      <SideNav
+        title={'start'}
+        position={'right'}
+        nextPage={'/'}
+        bgColor={'pale'}
+        titleColor={'navy'}
+      />
+    </PageWrapper>
+  </PageTransition>
 );
 
 export default About;

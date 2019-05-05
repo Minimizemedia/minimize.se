@@ -1,4 +1,10 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
+import styled from '@emotion/styled';
+import theme from '../utils/theme';
+
+const Body = styled.body`
+  background-color: ${theme.colors.pale};
+`;
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -14,10 +20,10 @@ class MyDocument extends Document {
           <style>{`body { margin: 0; font-family: IBM Plex Sans, sans-serif; }`}</style>
           <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet" />
         </Head>
-        <body className="custom_class">
+        <Body>
           <Main />
           <NextScript />
-        </body>
+        </Body>
       </Html>
     );
   }
