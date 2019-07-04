@@ -18,7 +18,8 @@
     "react-dom": "^16.6.0",
     "react-helmet": "^5.2.0",
     "react-typography": "^0.16.13",
-    "typography": "^0.16.17"
+    "typography": "^0.16.17",
+    "snyk": "^1.190.0"
   },
   "keywords": [
     "gatsby",
@@ -30,7 +31,9 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "gatsby develop",
-    "now-build": "gatsby build"
+    "now-build": "gatsby build",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "devDependencies": {
     "eslint": "^5.8.0",
@@ -41,5 +44,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/minimizelab/minimize.se"
-  }
+  },
+  "snyk": true
 }
