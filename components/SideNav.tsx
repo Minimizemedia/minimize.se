@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import { withRouter } from 'next/router';
 import styled from '@emotion/styled';
+import { WithRouterProps } from 'next/dist/client/with-router';
 
-const NavDiv = styled.div`
+interface NavDivProps {
+  hover: boolean;
+  position?: string;
+  bgColor: string;
+}
+
+const NavDiv = styled.div<NavDivProps>`
   width: ${props => (props.hover ? '4.5vw' : '4vw')};
   transition: width 0.1s ease;
   position: fixed;
@@ -19,7 +26,11 @@ const NavDiv = styled.div`
   flex-direction: column;
 `;
 
-const NavTitle = styled.h1`
+interface NavTitleProps extends NavDivProps {
+  titleColor: string;
+}
+
+const NavTitle = styled.h1<NavTitleProps>`
   font-size: 1em;
   color: ${props => props.theme.colors[props.hover ? props.bgColor : props.titleColor]};
   margin-left: ${props => (props.position == 'left' ? '8vw' : '0')};
@@ -28,7 +39,15 @@ const NavTitle = styled.h1`
   text-orientation: mixed;
 `;
 
-class SideNav extends Component {
+interface SideNavProps extends WithRouterProps {
+  nextPage: string;
+  bgColor: string;
+  position: string;
+  title: string;
+  titleColor: string;
+}
+
+class SideNav extends Component<SideNavProps> {
   componentDidMount() {
     const { router } = this.props;
     router.prefetch(this.props.nextPage);
@@ -45,21 +64,21 @@ class SideNav extends Component {
     });
   };
   render() {
-    const { router } = this.props;
+    const { router, nextPage, position, bgColor, titleColor, title } = this.props;
     return (
       <NavDiv
-        onClick={() => setTimeout(() => router.push(this.props.nextPage), 100)}
+        onClick={() => setTimeout(() => router.push(nextPage), 100)}
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
         hover={this.state.hover}
-        bgColor={this.props.bgColor}
-        position={this.props.position}>
+        bgColor={bgColor}
+        position={position}>
         <NavTitle
           hover={this.state.hover}
-          bgColor={this.props.bgColor}
-          titleColor={this.props.titleColor}
-          position={this.props.position}>
-          {this.props.title}
+          bgColor={bgColor}
+          titleColor={titleColor}
+          position={position}>
+          {title}
         </NavTitle>
       </NavDiv>
     );
