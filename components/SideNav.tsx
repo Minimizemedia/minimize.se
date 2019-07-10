@@ -67,11 +67,11 @@ const SideNav: FunctionComponent<SideNavProps> = ({
       onClick={clickHandler}
       onMouseEnter={hoverHandler(true)}
       onMouseLeave={hoverHandler(false)}
-      hover={this.state.hover}
+      hover={hover}
       bgColor={bgColor}
       position={position}>
       <NavTitle
-        hover={this.state.hover}
+        hover={hover}
         bgColor={bgColor}
         titleColor={titleColor}
         position={position}>
