@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
-import { withRouter } from 'next/router';
+import React, { FunctionComponent, useState } from 'react';
+import { useRouter } from 'next/router';
 import styled from '@emotion/styled';
-import { WithRouterProps } from 'next/dist/client/with-router';
 
 interface NavDivProps {
   hover: boolean;
@@ -39,7 +38,7 @@ const NavTitle = styled.h1<NavTitleProps>`
   text-orientation: mixed;
 `;
 
-interface SideNavProps extends WithRouterProps {
+interface SideNavProps {
   nextPage: string;
   bgColor: string;
   position: string;
@@ -47,42 +46,39 @@ interface SideNavProps extends WithRouterProps {
   titleColor: string;
 }
 
-class SideNav extends Component<SideNavProps> {
-  componentDidMount() {
-    const { router } = this.props;
-    router.prefetch(this.props.nextPage);
-  }
-  state = {
-    hover: false,
+const SideNav: FunctionComponent<SideNavProps> = ({
+  nextPage,
+  bgColor,
+  position,
+  titleColor,
+  title,
+}) => {
+  const [hover, setHover] = useState(false);
+  const router = useRouter();
+  router.prefetch();
+  const hoverHandler = (value: boolean) => () => {
+    setHover(value);
   };
-  handleMouseEnter = () => {
-    this.setState({ hover: true });
+  const clickHandler = () => {
+    setTimeout(() => router.push(nextPage), 100);
   };
-  handleMouseLeave = () => {
-    this.setState({
-      hover: false,
-    });
-  };
-  render() {
-    const { router, nextPage, position, bgColor, titleColor, title } = this.props;
-    return (
-      <NavDiv
-        onClick={() => setTimeout(() => router.push(nextPage), 100)}
-        onMouseEnter={this.handleMouseEnter}
-        onMouseLeave={this.handleMouseLeave}
+  return (
+    <NavDiv
+      onClick={clickHandler}
+      onMouseEnter={hoverHandler(true)}
+      onMouseLeave={hoverHandler(false)}
+      hover={this.state.hover}
+      bgColor={bgColor}
+      position={position}>
+      <NavTitle
         hover={this.state.hover}
         bgColor={bgColor}
+        titleColor={titleColor}
         position={position}>
-        <NavTitle
-          hover={this.state.hover}
-          bgColor={bgColor}
-          titleColor={titleColor}
-          position={position}>
-          {title}
-        </NavTitle>
-      </NavDiv>
-    );
-  }
-}
+        {title}
+      </NavTitle>
+    </NavDiv>
+  );
+};
 
-export default withRouter(SideNav);
+export default SideNav;
