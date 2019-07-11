@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
-import SideNav from '../components/SideNav';
+import SideNav from '../components//SideNav';
 import styled from '@emotion/styled';
 import PageWrapper from '../components/PageWrapper';
 import { css } from '@emotion/core';
 import { PageTransition } from '../utils/pageTransition';
 
-const spanStyle = props =>
+interface SpanStyleProps {
+  hover: boolean;
+}
+
+const spanStyle = (props: SpanStyleProps) =>
   props.hover
     ? css`
-        color: #F0E9DC;
+        color: #f0e9dc;
         text-shadow: rgb(28, 110, 210) 1px 0px 0px, rgb(28, 110, 210) 0.540302px 0.841471px 0px,
           rgb(28, 110, 210) -0.416147px 0.909297px 0px, rgb(28, 110, 210) -0.989992px 0.14112px 0px,
           rgb(28, 110, 210) -0.653644px -0.756802px 0px,
