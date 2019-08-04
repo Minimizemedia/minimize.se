@@ -1,11 +1,13 @@
 import React, { useState, useEffect, FunctionComponent } from 'react';
-import { useTransition, animated, UseTransitionProps } from 'react-spring';
+import { useTransition, animated, UseTransitionProps, ItemTransition } from 'react-spring';
 
-export const usePageTransition = transition => {
+type UsePageTransition<Item> = (transition: UseTransitionProps<Item>) => ItemTransition<Item>[];
+
+export const usePageTransition: UsePageTransition<boolean> = transition => {
   const [show, set] = useState(false);
   useEffect(() => {
     set(true);
-    return () => {
+    return (): void => {
       set(false);
     };
   }, []);
