@@ -9,7 +9,7 @@
     "mini_"
   ],
   "engines": {
-    "node": "10.16.0"
+    "node": "10.x"
   },
   "license": "MIT",
   "scripts": {
