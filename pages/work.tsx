@@ -9,7 +9,7 @@ const transition = {
   leave: { opacity: 0 },
 };
 
-const Work: FunctionComponent<{}> = () => (
+const Work: FunctionComponent = () => (
   <PageTransition transition={transition}>
     <PageWrapper bgColor="navy">
       <div>Work</div>
