@@ -20,25 +20,25 @@
     "now-dev": "next"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.15",
-    "@emotion/styled": "^10.0.15",
-    "emotion-theming": "^10.0.10",
-    "next": "^9.0.3",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "@emotion/core": "^10.0.27",
+    "@emotion/styled": "^10.0.27",
+    "emotion-theming": "^10.0.27",
+    "next": "^9.1.7",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "react-spring": "^9.0.0-beta.1"
   },
   "devDependencies": {
-    "@types/node": "^12.6.9",
-    "@types/react": "^16.8.24",
-    "@typescript-eslint/eslint-plugin": "^1.13.0",
-    "@typescript-eslint/parser": "^1.13.0",
-    "eslint": "^6.1.0",
-    "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-react": "^7.14.3",
-    "prettier": "^1.17.0",
-    "typescript": "^3.5.3"
+    "@types/node": "^13.1.6",
+    "@types/react": "^16.9.17",
+    "@typescript-eslint/eslint-plugin": "^2.16.0",
+    "@typescript-eslint/parser": "^2.16.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.17.0",
+    "prettier": "^1.19.1",
+    "typescript": "^3.7.4"
   },
   "repository": {
     "type": "git",
