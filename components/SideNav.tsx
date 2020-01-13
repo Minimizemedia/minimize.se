@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useState } from 'react';
 import { useRouter } from 'next/router';
-import styled from '@emotion/styled';
+import styled from '../utils/styled';
 
 interface NavDivProps {
   hover: boolean;
@@ -9,15 +9,15 @@ interface NavDivProps {
 }
 
 const NavDiv = styled.div<NavDivProps>`
-  width: ${props => (props.hover ? '4.5vw' : '4vw')};
+  width: ${(props): string => (props.hover ? '4.5vw' : '4vw')};
   transition: width 0.1s ease;
   position: fixed;
   top: 0;
   z-index: 100;
-  left: ${props => (props.position == 'left' ? 0 : 'auto')};
-  right: ${props => (props.position == 'right' ? 0 : 'auto')};
+  left: ${(props): string | number => (props.position == 'left' ? 0 : 'auto')};
+  right: ${(props): string | number => (props.position == 'right' ? 0 : 'auto')};
   height: 100vh;
-  background-color: ${props => props.theme.colors[props.bgColor]};
+  background-color: ${(props): string => props.theme.colors[props.bgColor]};
   display: flex;
   justify-content: center;
   align-content: center;
@@ -31,9 +31,9 @@ interface NavTitleProps extends NavDivProps {
 
 const NavTitle = styled.h1<NavTitleProps>`
   font-size: 1em;
-  color: ${props => props.theme.colors[props.hover ? props.bgColor : props.titleColor]};
-  margin-left: ${props => (props.position == 'left' ? '8vw' : '0')};
-  margin-right: ${props => (props.position == 'right' ? '8vw' : '0')};
+  color: ${(props): string => props.theme.colors[props.hover ? props.bgColor : props.titleColor]};
+  margin-left: ${(props): string => (props.position == 'left' ? '8vw' : '0')};
+  margin-right: ${(props): string => (props.position == 'right' ? '8vw' : '0')};
   writing-mode: vertical-rl;
   text-orientation: mixed;
 `;
@@ -55,11 +55,11 @@ const SideNav: FunctionComponent<SideNavProps> = ({
 }) => {
   const [hover, setHover] = useState(false);
   const router = useRouter();
-  router.prefetch();
-  const hoverHandler = (value: boolean) => () => {
+  // router.prefetch();
+  const hoverHandler = (value: boolean): (() => void) => (): void => {
     setHover(value);
   };
-  const clickHandler = () => {
+  const clickHandler = (): void => {
     setTimeout(() => router.push(nextPage), 100);
   };
   return (
@@ -70,11 +70,7 @@ const SideNav: FunctionComponent<SideNavProps> = ({
       hover={hover}
       bgColor={bgColor}
       position={position}>
-      <NavTitle
-        hover={hover}
-        bgColor={bgColor}
-        titleColor={titleColor}
-        position={position}>
+      <NavTitle hover={hover} bgColor={bgColor} titleColor={titleColor} position={position}>
         {title}
       </NavTitle>
     </NavDiv>

@@ -4,17 +4,17 @@ import { ThemeProvider } from 'emotion-theming';
 import theme from '../utils/theme';
 
 class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
+  public static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
 
     if (Component.getInitialProps) {
       pageProps = await Component.getInitialProps(ctx);
     }
-    
+
     return { pageProps };
   }
 
-  render() {
+  public render() {
     const { Component, pageProps } = this.props;
 
     return (

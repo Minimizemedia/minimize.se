@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SideNav from '../components//SideNav';
-import styled from '@emotion/styled';
+import styled from '../utils/styled';
 import PageWrapper from '../components/PageWrapper';
 import { css } from '@emotion/core';
 import { PageTransition } from '../utils/pageTransition';
@@ -21,7 +21,7 @@ const spanStyle = (props: SpanStyleProps) =>
     : undefined;
 
 const IndexTitle = styled.h1`
-  color: ${props => props.theme.colors['blue']};
+  color: ${(props): string => props.theme.colors['blue']};
   font-size: 10vw;
   margin-left: 14%;
   margin-top: 6%;
@@ -38,20 +38,20 @@ const transition = {
 };
 
 class IndexPage extends Component {
-  state = {
+  public state = {
     hover: false,
   };
-  handleMouseEnter = () => {
+  private handleMouseEnter = (): void => {
     this.setState({
       hover: true,
     });
   };
-  handleMouseLeave = () => {
+  private handleMouseLeave = (): void => {
     this.setState({
       hover: false,
     });
   };
-  render() {
+  public render() {
     return (
       <PageTransition transition={transition}>
         <PageWrapper bgColor="pale">

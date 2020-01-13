@@ -1,18 +1,19 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
-import styled from '@emotion/styled';
+import Document, { Html, Head, Main, NextScript, DocumentInitialProps } from 'next/document';
+import styled from '../utils/styled';
 import theme from '../utils/theme';
+import React from 'react';
 
 const Body = styled.body`
   background-color: ${theme.colors.pale};
 `;
 
 class MyDocument extends Document {
-  static async getInitialProps(ctx) {
+  public static async getInitialProps(ctx): Promise<DocumentInitialProps> {
     const initialProps = await Document.getInitialProps(ctx);
     return { ...initialProps };
   }
 
-  render() {
+  public render() {
     return (
       <Html>
         <Head>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import SideNav from '../components/SideNav';
 import PageWrapper from '../components/PageWrapper';
 import { PageTransition } from '../utils/pageTransition';
@@ -9,7 +9,7 @@ const transition = {
   leave: { opacity: 0 },
 };
 
-const About = () => (
+const About: FunctionComponent = () => (
   <PageTransition transition={transition}>
     <PageWrapper bgColor="terra">
       <div>about</div>

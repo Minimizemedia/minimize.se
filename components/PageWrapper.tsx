@@ -1,12 +1,12 @@
 import React, { FunctionComponent } from 'react';
-import styled from '@emotion/styled';
+import styled from '../utils/styled';
 
 interface WrapperProps {
   bgColor: string;
 }
 
 const Wrapper = styled.div<WrapperProps>`
-  background-color: ${props => props.theme.colors[props.bgColor]};
+  background-color: ${(props): string => props.theme.colors[props.bgColor]};
   width: 100vw;
   min-height: 100vh;
   display: flex;
@@ -20,6 +20,8 @@ interface PageWrapperProps {
   bgColor: string;
 }
 
-const PageWrapper: FunctionComponent<PageWrapperProps> = ({ bgColor, children }) => <Wrapper bgColor={bgColor}>{children}</Wrapper>;
+const PageWrapper: FunctionComponent<PageWrapperProps> = ({ bgColor, children }) => (
+  <Wrapper bgColor={bgColor}>{children}</Wrapper>
+);
 
 export default PageWrapper;

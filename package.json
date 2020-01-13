@@ -9,7 +9,7 @@
     "mini_"
   ],
   "engines": {
-    "node": "10.16.0"
+    "node": "10.x"
   },
   "license": "MIT",
   "scripts": {
@@ -20,23 +20,25 @@
     "now-dev": "next"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.10",
-    "@emotion/styled": "^10.0.10",
-    "emotion-theming": "^10.0.10",
-    "next": "^9.0.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-spring": "^9.0.0-beta.1"
+    "@emotion/core": "^10.0.27",
+    "@emotion/styled": "^10.0.27",
+    "emotion-theming": "^10.0.27",
+    "next": "^9.1.7",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-spring": "^9.0.0-beta.34"
   },
   "devDependencies": {
-    "@types/node": "^12.6.2",
-    "@types/react": "^16.8.23",
-    "eslint": "^6.0.1",
-    "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-prettier": "^3.0.1",
-    "eslint-plugin-react": "^7.12.4",
-    "prettier": "^1.17.0",
-    "typescript": "^3.5.3"
+    "@types/node": "^13.1.6",
+    "@types/react": "^16.9.17",
+    "@typescript-eslint/eslint-plugin": "^2.16.0",
+    "@typescript-eslint/parser": "^2.16.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.17.0",
+    "prettier": "^1.19.1",
+    "typescript": "^3.7.4"
   },
   "repository": {
     "type": "git",
